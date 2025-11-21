@@ -1,71 +1,66 @@
+import Hero from './components/Hero'
+import Calculator from './components/Calculator'
+import Features from './components/Features'
+import Industries from './components/Industries'
+import Process from './components/Process'
+import CaseStudy from './components/CaseStudy'
+import Demo from './components/Demo'
+import Consult from './components/Consult'
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+    <div className="min-h-screen bg-slate-900 text-white">
+      {/* Navbar */}
+      <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-slate-900/60 bg-slate-900/50 border-b border-white/10">
+        <div className="container mx-auto px-6 h-14 flex items-center justify-between">
+          <a href="/" className="font-semibold tracking-tight">Contractor Smart Site</a>
+          <nav className="hidden sm:flex items-center gap-6 text-sm text-slate-300">
+            <a href="#features" className="hover:text-white">Smart Websites</a>
+            <a href="#industries" className="hover:text-white">Industries</a>
+            <a href="#process" className="hover:text-white">Process</a>
+            <a href="#consult" className="hover:text-white">Contact</a>
+          </nav>
+          <a href="#consult" className="inline-flex items-center justify-center rounded-lg bg-indigo-500 hover:bg-indigo-400 text-white font-semibold px-3 py-1.5 text-sm">Free Consultation</a>
+        </div>
+      </header>
 
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
-            </div>
+      {/* Sections */}
+      <Hero />
+      <div id="features"><Features /></div>
+      <Calculator />
+      <Demo />
+      <div id="industries"><Industries /></div>
+      <div id="process"><Process /></div>
+      <CaseStudy />
+      <Consult />
 
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
-
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
+      {/* Footer */}
+      <footer className="bg-slate-950 border-t border-white/10 py-12">
+        <div className="container mx-auto px-6 grid md:grid-cols-3 gap-8 text-slate-300">
+          <div>
+            <div className="font-semibold text-white">Contractor Smart Site</div>
+            <p className="text-sm mt-2">AI live chat, SMS forms, and SEO built to turn visitors into booked jobs.</p>
           </div>
-
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
-              </div>
-            </div>
+          <div>
+            <div className="font-semibold text-white mb-2">Pages</div>
+            <ul className="space-y-1 text-sm">
+              <li><a href="#">Home</a></li>
+              <li><a href="#features">Smart Websites</a></li>
+              <li><a href="#industries">Local SEO</a></li>
+              <li><a href="#process">Google & Social Ads</a></li>
+              <li><a href="#consult">Contact</a></li>
+              <li><a href="/test" className="text-indigo-300">System Test</a></li>
+            </ul>
           </div>
-
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
+          <div>
+            <div className="font-semibold text-white mb-2">Contact</div>
+            <ul className="space-y-1 text-sm">
+              <li>Phone: (555) 555-5555</li>
+              <li>Email: hello@contractorsmartsite.ai</li>
+            </ul>
           </div>
         </div>
-      </div>
+      </footer>
     </div>
   )
 }
